@@ -1,12 +1,30 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NurseController;
 use App\Http\Controllers\DoctorController;
 
-Route::get('/', function(){ return view('home'); })->name('home');
+Route::get('/', function () {
+    if (Auth::check()) {
+        // If the user is logged in, redirect according to role (or pick a default)
+        if (Auth::user()->isAdmin) {
+            return redirect()->route('admin.users');
+        } elseif (Auth::user()->isNurse) {
+            return redirect()->route('nurse.patients');
+        } elseif (Auth::user()->isDoctor) {
+            return redirect()->route('doctor.patients');
+        } else {
+            // If no specific role is found, redirect to a default route or show an error
+            return redirect()->route('login');
+        }
+    } else {
+        // If not logged in, always go to login
+        return redirect()->route('login');
+    }
+})->name('home');
 
 // Auth routes
 Route::get('/login',[LoginController::class,'showLoginForm'])->name('login');

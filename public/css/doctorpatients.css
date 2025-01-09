@@ -1,0 +1,167 @@
+/* doctorpatients.css */
+
+/* Container for the entire page content */
+.doctor-patients-container {
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 1rem;
+}
+
+.page-title, .table-title {
+    font-size: 22px;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* A simple message if we're not editing any patient */
+.no-edit-message {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Horizontal divider style */
+.section-divider {
+    margin: 2rem 0;
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+}
+
+/* ========== Form Card ========== */
+.form-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* The form itself */
+.doctor-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.form-row {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-control {
+    padding: 0.75rem;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Form actions area */
+.form-actions {
+    flex: 1 1 100%;
+    margin-top: 1rem;
+}
+
+.btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Table Styles ========== */
+.table-container {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.doctor-patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    color: #333;
+}
+
+.doctor-patient-table thead {
+    background-color: #f0f0f0;
+}
+
+.doctor-patient-table thead th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.doctor-patient-table tbody td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+}
+
+.doctor-patient-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Remove bottom border from the last row if you want a clean edge */
+.doctor-patient-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Inline form for the Delete button so it doesn't break layout */
+.inline-form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+/* Minimal link-like button styling (for Edit, Delete, etc.) */
+.btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 0;
+    margin-right: 8px; /* spacing between Edit and Delete if desired */
+}
+
+.btn-link:hover {
+    text-decoration: none;
+    color: #0056b3;
+}
+
+.btn-link.danger {
+    color: #d9534f;
+}
+
+.btn-link.danger:hover {
+    color: #c9302c;
+    text-decoration: none;
+}

@@ -1,75 +1,136 @@
+/* -- BASIC RESET & BODY -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin:0; padding:0;
-    background: #f4f4f4;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fb;
+    color: #333;
+    /* If you want the sidebar to be fixed while scrolling, consider:
+       overflow: hidden;
+    */
+}
+
+/* -- SIDEBAR -- */
+.sidebar {
+    position: fixed; /* or absolute, if you prefer */
+    top: 0;
+    left: 0;
+    width: 240px; /* sidebar width */
+    height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #eee;
+    padding: 1.5rem 1rem;
+    overflow-y: auto; /* scroll if content too tall */
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar-logo {
+    width: 160px; 
+    object-fit: contain;
+    margin-right: 0.75rem;
+}
+
+.sidebar-brand-name {
+    font-size: 18px;
+    font-weight: 600;
     color: #333;
 }
 
-.navbar {
-    background: #333;
-    color: #fff;
-    padding: 10px;
+.sidebar-section {
+    margin-bottom: 2rem;
 }
-.navbar a, .navbar form button {
-    color: #fff;
-    margin-right: 10px;
+
+.sidebar-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-menu-item {
+    /* Additional styling if needed */
+}
+
+.sidebar-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     text-decoration: none;
-}
-.navbar form button {
-    background:none;
-    border:none;
-    cursor:pointer;
-}
-
-.container {
-    max-width: 900px;
-    margin: 20px auto;
-    background:#fff;
-    padding:20px;
-    border-radius:5px;
+    color: #333;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-size: 14px;
 }
 
-h1, h2, h3 {
-    margin-top:0;
+.sidebar-menu-link:hover {
+    background-color: #f0f0f0;
 }
 
-.alert {
-    padding:10px;
-    margin:10px 0;
-    border-radius:5px;
+.sidebar-menu-link.active {
+    background-color: #007bff;
+    color: #fff;
 }
+
+.sidebar-menu-icon {
+    /* You can style your icon or use an <i> from a library */
+    font-size: 16px;
+    /* e.g. margin-right: 8px; if not using gap */
+}
+
+.sidebar-logout-form {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.sidebar-logout-button {
+    background-color: #d9534f; 
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.sidebar-logout-button:hover {
+    background-color: #c9302c;
+}
+
+/* -- MAIN CONTENT -- */
+.main-content {
+    margin-left: 240px; /* same as sidebar width */
+    padding: 2rem;
+}
+
+/* Alerts, success, error, etc. (Adjust to your preference) */
 .alert.success {
-    background: #d4edda;
+    background-color: #d4edda;
     color: #155724;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
 }
 .alert.error {
-    background: #f8d7da;
+    background-color: #f8d7da;
     color: #721c24;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top:20px;
-}
-table, th, td {
-    border:1px solid #ccc;
-}
-th, td {
-    padding:10px;
-    text-align:left;
-}
-form div {
-    margin-bottom:10px;
-}
-button, input[type="submit"] {
-    background:#333;
-    color:#fff;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
-button:hover, input[type="submit"]:hover {
-    background:#555;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
 }
